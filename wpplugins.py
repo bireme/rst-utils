@@ -56,7 +56,7 @@ LANGUAGES = {
 
 # Plugins que serão instalados
 PLUGINS = (
-    'multi-language-framework',
+    'polylang',
     'ultimate-posts-widget',
     'page-links-to',
     'contact-form-7',
@@ -87,7 +87,7 @@ def assistFunction():
     print ("* Exemplo: python wpplugins.py install \n")
     print ("Serão instalados os seguintes plugins: \n")
     print (" - BVS-Site ")
-    print (" - Multi Language Framework ")
+    print (" - Polylang ")
     print (" - Ultimate Posts Widget ")
     print (" - Page Links To ")
     print (" - Contact Form 7 ")
