@@ -1,0 +1,52 @@
+<div class="multisearch" style="display: none;">
+    <script src="http://reddes.bvsalud.org/support/js/multisearch-widget.js"></script>
+    <form class="vhl-search-form" action="http://pesquisa.bvsalud.org/economia/" method="get" id="searchForm">
+        <input type="hidden" name="lang" value="pt" />
+        <input type="hidden" name="home_url" value="http://economia.saude.bvs.br/" />
+        <input type="hidden" name="home_text" value="BVS Economia e Saúde" />
+        <input type="hidden" name="filter[db][]" value="ECOS" />
+        <input type="hidden" name="inputval" class="vhl-search-submit" value="Pesquisar" />
+        <label for="vhl-search-input"></label>
+        <input type="text" id="vhl-search-input" class="vhl-search-input" name="q" value="" placeholder="Pesquisar" />
+        <a href="javascript:void(0);" class="search-submit">
+            <!-- img src="/wp-content/themes/bvs-sms/img/search-button.jpg" -->
+			<button type="submit" value="pesquisar">pesquisar</button>
+        </a>
+    </form>
+    <form class="default-search-form" action="http://pesquisa.bvsalud.org/economia" method="get" id="opSearchForm">
+        <input type="hidden" name="lang" value="pt" />
+        <input type="hidden" name="home_url" value="https://economia.saude.bvs.br" />
+        <input type="hidden" name="home_text" value="BVS Economia e Saúde" />
+        <input type="hidden" name="inputval" class="vhl-search-submit" />
+        <label for="q"></label>
+        <input type="text" id="q" class="vhl-search-input op-search-input" name="q" value="" placeholder="Pesquisar" />
+        <a href="javascript:void(0);" class="search-submit">
+            <!-- img src="/wp-content/themes/bvs-sms/img/search-button.jpg" -->
+			<button type="submit" value="pesquisar">pesquisar</button>
+        </a>
+    </form>
+    <div class="searchItens">
+        <span>Buscar em:</span>
+        <input type="radio" name="engine" checked="checked" value="op1" id="search-op1" /> <label for="search-op1">Bases ECOS </label>
+        <input type="radio" name="engine" value="op2" id="search-op2" /> <label for="search-op2">Todas as bases</label>
+    </div>
+    <script>
+        jQuery(document).ready(function($){
+            $(".multisearch").css({ "display": "block" });
+            $(".search-submit").click(function () {
+                $(this).closest("form").submit();
+            });
+            $("#search-op1").click(function () {
+                    $(".vhl-search-form").css({ "display": "block" });
+                    $(".default-search-form").css({ "display": "none" });
+                    $("#vhl-search-input").val($(".op-search-input").val());
+            });
+            $("#search-op2").click(function () {
+                    $(".vhl-search-form").css({ "display": "none" });
+                    $(".default-search-form").css({ "display": "block" });
+                    $(".op-search-input").val($("#vhl-search-input").val());
+            });
+        });
+    </script>
+</div>
+
